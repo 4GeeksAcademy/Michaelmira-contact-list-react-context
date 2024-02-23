@@ -1,6 +1,6 @@
 import React from "react";
 
-const ContactCard = () => {
+export const ContactCard = () => {
 	return (
 		<li className="list-group-item">
 			<div className="row w-100">
@@ -49,5 +49,3 @@ const ContactCard = () => {
 		</li>
 	);
 };
-
-export default ContactCard;

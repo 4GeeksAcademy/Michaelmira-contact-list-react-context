@@ -2,15 +2,15 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./views/home";
+import { Home } from "./views/Home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { AddContact } from "./component/AddContact"
-import { ContactCard } from "./component/ContactCard"
+import { AddContact } from "./component/AddContact";
+import { ContactCard } from "./component/ContactCard";
 
 //create your first component
 const Layout = () => {
@@ -24,7 +24,7 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Routes>
-						<Route path="/" element={<Home />} />
+						<Route path="/" element={<Home/>} />
 						<Route path="/contact-card" element={<ContactCard />} />
 						<Route path="/add-contact" element={<AddContact />} />
 						<Route path="/single/:theid" element={<Single />} />

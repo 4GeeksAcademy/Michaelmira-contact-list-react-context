@@ -1,5 +1,23 @@
 import React from "react";
 
+function ToDoPlusCancel() {
+    const [todos, setTodos] = useState([]);
+	const [todoInput, setTodoInput] = useState("");
+
+    const inputStyle = {
+        border: 'none',  // Remove the border
+        outline: 'none',  // Remove the default focus outline
+        width: "100",
+    };
+
+    const handleInputChange = (e) => {
+        setTodoInput(e.target.value);
+    };
+
+    
+
+    };
+
 export const ContactCard = () => {
 	return (
 		<li className="list-group-item">

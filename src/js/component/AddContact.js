@@ -18,10 +18,10 @@ export const AddContact = (props) => {
 							placeholder="Full Name"
 							value={contact.fullName}
 							onChange= {(e) =>
-								setContact9{
+								setContact({
 									...contact,
 									fullName: e.target.value
-								}
+								})
 							}
 						/>
 					</div>
@@ -33,10 +33,10 @@ export const AddContact = (props) => {
 							placeholder="Enter email"
 							value={contact.email}
 							onChange= {(e) =>
-								setContact9{
+								setContact({
 									...contact,
 									email: e.target.value
-								}
+								})
 							}
 						/>
 					</div>
@@ -48,10 +48,10 @@ export const AddContact = (props) => {
 							placeholder="Enter phone"
 							value={contact.phone}
 							onChange= {(e) =>
-								setContact9{
+								setContact({
 									...contact,
 									phone: e.target.value
-								}
+								})
 							}
 						/>
 					</div>
@@ -63,15 +63,16 @@ export const AddContact = (props) => {
 							placeholder="Enter address"
 							value={contact.address}
 							onChange= {(e) =>
-								setContact9{
+								setContact({
 									...contact,
 									address: e.target.value
-								}
+								})
 							}
 						/>
 					</div>
 					<button
 						type="button"
+						onClick={() => props.onSave(contact) } 
 						className="btn btn-primary form-control">
 						save
 					</button>

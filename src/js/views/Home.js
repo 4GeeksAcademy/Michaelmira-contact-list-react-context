@@ -16,12 +16,13 @@ export const Home = () => {
 		setContacts(contacts.concat(contact))
 	};
 
-	const updateContact =(contact, indexToUpdate) => {
-		console.log ("We are Editing", contact);
+	const updateContact =(updatedContact) => {
+		console.log ("Contact To Update", contact);
 		setContacts(contacts.map((oldContact, index) => {
-			if(indexToUpdate === index ) return contact;
-			else return oldContact
+			if(contactToUpdate.index === index ) return updatedcontact;
+			else return oldContact;
 		}));
+		setContactToUpdate(null);
 	};
 
 	const deleteContact =(indexToDelete) => {
@@ -35,7 +36,9 @@ export const Home = () => {
 			<div className="container">
 				<div>
 					<div className="text-right my-3">
-						<AddContact onSave={addContact} contact={contactToUpdate}  />
+						<AddContact 
+						onSave={contactToUpdate ? updateContact : addContact} 
+						contact={contactToUpdate}  />
 					<Link className="btn btn-success" to="/add-contact" >
 						Please press this button to Add Contact
 					</Link>
@@ -46,12 +49,14 @@ export const Home = () => {
 						aria-expanded="true">
 						<ul className="list-group pull-down" id="contact-list">
 							{contacts.map((c, i) => (
-							  <ContactCard 
-							  contact={c} 
-							  onDelete={() => deleteContact(i)}
-							  onUpdate={() => setContactToUpdate(c)} />
+							  	<ContactCard 
+									contact={c} 
+									onDelete={() => deleteContact(i)}
+									onUpdate={() => 
+										setContactToUpdate({...c, index: i })
+									} 
+								/>
 							))}
-
 						</ul>
 					</div>
 				</div>

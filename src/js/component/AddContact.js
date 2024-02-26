@@ -72,7 +72,10 @@ export const AddContact = (props) => {
 					</div>
 					<button
 						type="button"
-						onClick={() => props.onSave(contact) } 
+						onClick={() => {
+							console.log("contact before sending", contact );
+							props.onSave(contact) 
+						}} 
 						className="btn btn-primary form-control">
 						save
 					</button>

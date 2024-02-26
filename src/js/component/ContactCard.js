@@ -1,23 +1,5 @@
 import React from "react";
 
-function ToDoPlusCancel() {
-    const [todos, setTodos] = useState([]);
-	const [todoInput, setTodoInput] = useState("");
-
-    const inputStyle = {
-        border: 'none',  // Remove the border
-        outline: 'none',  // Remove the default focus outline
-        width: "100",
-    };
-
-    const handleInputChange = (e) => {
-        setTodoInput(e.target.value);
-    };
-
-    
-
-    };
-
 export const ContactCard = () => {
 	return (
 		<li className="list-group-item">
@@ -67,58 +49,3 @@ export const ContactCard = () => {
 		</li>
 	);
 };
-
-////////////////////////////////////////////////////////////////////////////////////////////////
-
-			// <form 
-            //     onSubmit={(ev) => {
-            //         ev.preventDefault();
-            //         if (todoInput.length > 0) {
-            //             setTodos([
-            //                 {
-            //                     label: todoInput,
-            //                     is_done: false,
-            //                 },
-            //                 ...todos,
-            //             ]);
-            //             setTodoInput("");
-            //             addTaskToApi()
-            //         }
-            //     }} 
-            //     >
-            //         <label htmlFor="toDoInput"></label>
-            //         <input 
-            //             className='ms-5 p-1 '
-            //             id="toDoInput"
-            //             type="text" 
-            //             placeholder="What needs to be done? " 
-            //             required 
-            //             style={inputStyle}
-            //             value={todoInput}
-            //             onChange={handleInputChange}
-            //         >
-            //         </input>
-            //         {todos.map((item, idx) => (
-            //             <TodoItem 
-            //                 key={idx}
-            //                 id={item.id}
-            //                 label={item.label}
-            //                 is_done={item.is_done}
-            //                 toggle_todo={() => 
-            //                     setTodos(
-            //                         todos.toSpliced(idx, 1, {
-            //                             label: item.label,
-            //                             is_done: !item.is_done,
-            //                         })
-            //                     )
-            //                 }
-            //                 delete_todo={() => deleteTaskFromApi(item.id)}
-            //                 // delete_todo={() => 
-            //                 //     setTodos(
-            //                 //         todos.toSpliced(idx, 1
-            //                 //         )
-            //                 //     )
-            //                 // }
-            //             />
-            //         ))}
-			// 	</form>

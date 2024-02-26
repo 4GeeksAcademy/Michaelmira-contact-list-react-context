@@ -2,7 +2,12 @@ import React from "react";
 import { useState } from "react";
 
 export const AddContact = (props) => {
-	const [ contact, setContact ] = useState({})
+	const [ contact, setContact ] = useState({
+		fullName: props.contact ? props.contact.fullName : "",
+		email: props.contact ? props.contact.email : "",
+		phone: props.contact ? props.contact.phone : "",
+		address: props.contact ? props.contact.address : "",
+	});
 
 
 	return (

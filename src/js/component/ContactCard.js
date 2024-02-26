@@ -15,7 +15,8 @@ export const ContactCard = (props) => {
 					<div className=" float-right">
 						<button
 							className="btn"
-						>
+							onClick={() => props.onUpdate(props.contact)}>
+						
 							<i className="fas fa-pencil-alt mr-3"></i>
 						</button>
 						<button

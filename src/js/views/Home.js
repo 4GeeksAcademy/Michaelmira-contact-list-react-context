@@ -9,16 +9,17 @@ import { ContactCard } from "../component/ContactCard";
 export const Home = () => {
 
 	const [ contacts, setContacts] = useState ([])
+	const [ contactToUpdate, setContactToUpdate] = useState (null)
 		
 	const addContact =(contact) => {
 		console.log ("This is the contact", contact);
 		setContacts(contacts.concat(contact))
 	};
 
-	const updateContact =(contact, contactToUpdate) => {
+	const updateContact =(contact, indexToUpdate) => {
 		console.log ("We are Editing", contact);
 		setContacts(contacts.map((oldContact, index) => {
-			if(contactToUpdate === index ) return contact;
+			if(indexToUpdate === index ) return contact;
 			else return oldContact
 		}));
 	};
@@ -34,7 +35,7 @@ export const Home = () => {
 			<div className="container">
 				<div>
 					<div className="text-right my-3">
-						<AddContact onSave={addContact} />
+						<AddContact onSave={addContact} contact={contactToUpdate}  />
 					<Link className="btn btn-success" to="/add-contact" >
 						Please press this button to Add Contact
 					</Link>
@@ -48,7 +49,7 @@ export const Home = () => {
 							  <ContactCard 
 							  contact={c} 
 							  onDelete={() => deleteContact(i)}
-							  onUpdate={(contactToUpdate) => updateContact(contactToUpdate, i)} />
+							  onUpdate={() => setContactToUpdate(c)} />
 							))}
 
 						</ul>

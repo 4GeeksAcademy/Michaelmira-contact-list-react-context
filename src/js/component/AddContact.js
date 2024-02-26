@@ -1,6 +1,10 @@
 import React from "react";
+import { useState } from "react";
 
-export const AddContact = () => {
+export const AddContact = (props) => {
+	const [ contact, setContact ] = useState({})
+
+
 	return (
 		<div className="container">
 			<div>
@@ -12,6 +16,13 @@ export const AddContact = () => {
 							type="text"
 							className="form-control"
 							placeholder="Full Name"
+							value={contact.fullName}
+							onChange= {(e) =>
+								setContact9{
+									...contact,
+									fullName: e.target.value
+								}
+							}
 						/>
 					</div>
 					<div className="form-group">

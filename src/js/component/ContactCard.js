@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ContactCard = () => {
+export const ContactCard = (props) => {
 	return (
 		<li className="list-group-item">
 			<div className="row w-100">
@@ -20,11 +20,12 @@ export const ContactCard = () => {
 						</button>
 						<button
 							className="btn"
-                        >
+							onClick={() => props.onDelete()}>
+
 							<i className="fas fa-trash-alt"></i>
 						</button>
 					</div>
-					<label className="name lead">Mike Anamendolla</label>
+					<label className="name lead">{props.contact.fullName}</label>
 					<br />
 					<i className="fas fa-map-marker-alt text-muted mr-3"></i>
 					<span className="text-muted">5842 Hillcrest Rd</span>

@@ -10,10 +10,23 @@ export const Home = () => {
 
 	const [ contacts, setContacts] = useState ([])
 		
-		const addContact =(contact) => {
-			console.log ("This is the contact", contact);
-			setContacts(contacts.concat(contact))
-		};
+	const addContact =(contact) => {
+		console.log ("This is the contact", contact);
+		setContacts(contacts.concat(contact))
+	};
+
+	const updateContact =(contact, contactToUpdate) => {
+		console.log ("We are Editing", contact);
+		setContacts(contacts.map((oldContact, index) => {
+			if(contactToUpdate === index ) return contact;
+			else return oldContact
+		}));
+	};
+
+	const deleteContact =(indexToDelete) => {
+		console.log ("We are deleteing");
+		setContacts(contacts.filter((item, index) => indexToDelete !== index  ));
+	};
 
 	return (
 
@@ -31,8 +44,11 @@ export const Home = () => {
 						className="panel-collapse collapse show"
 						aria-expanded="true">
 						<ul className="list-group pull-down" id="contact-list">
-							{contacts.map((c) => (
-							  <ContactCard contact={c} />
+							{contacts.map((c, i) => (
+							  <ContactCard 
+							  contact={c} 
+							  onDelete={() => deleteContact(i)}
+							  onUpdate={(contactToUpdate) => updateContact(contactToUpdate, i)} />
 							))}
 
 						</ul>

@@ -31,6 +31,13 @@ export const AddContact = (props) => {
 							type="email"
 							className="form-control"
 							placeholder="Enter email"
+							value={contact.email}
+							onChange= {(e) =>
+								setContact9{
+									...contact,
+									email: e.target.value
+								}
+							}
 						/>
 					</div>
 					<div className="form-group">
@@ -39,6 +46,13 @@ export const AddContact = (props) => {
 							type="phone"
 							className="form-control"
 							placeholder="Enter phone"
+							value={contact.phone}
+							onChange= {(e) =>
+								setContact9{
+									...contact,
+									phone: e.target.value
+								}
+							}
 						/>
 					</div>
 					<div className="form-group">
@@ -47,6 +61,13 @@ export const AddContact = (props) => {
 							type="text"
 							className="form-control"
 							placeholder="Enter address"
+							value={contact.address}
+							onChange= {(e) =>
+								setContact9{
+									...contact,
+									address: e.target.value
+								}
+							}
 						/>
 					</div>
 					<button

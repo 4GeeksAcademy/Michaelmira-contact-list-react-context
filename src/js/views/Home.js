@@ -31,9 +31,9 @@ export const Home = () => {
 						className="panel-collapse collapse show"
 						aria-expanded="true">
 						<ul className="list-group pull-down" id="contact-list">
-							{contacts.map((c) => {
+							{contacts.map((c) => (
 							  <ContactCard contact={c} />
-							})}
+							))}
 
 						</ul>
 					</div>

@@ -12,6 +12,7 @@ export const Home = () => {
 		
 		const addContact =(contact) => {
 			console.log ("This is the contact", contact);
+			setContacts(contacts.concat(contact))
 		};
 
 	return (
@@ -19,21 +20,21 @@ export const Home = () => {
 		<>
 			<div className="container">
 				<div>
-					<p className="text-right my-3">
+					<div className="text-right my-3">
 						<AddContact onSave={addContact} />
 					<Link className="btn btn-success" to="/add-contact" >
 						Please press this button to Add Contact
 					</Link>
-					</p>
+					</div>
 					<div
 						id="contacts"
 						className="panel-collapse collapse show"
 						aria-expanded="true">
 						<ul className="list-group pull-down" id="contact-list">
-							<ContactCard />
-							<ContactCard />
-							<ContactCard />
-							<ContactCard />
+							{contacts.map((c) => {
+							  <ContactCard contact={c} />
+							})}
+
 						</ul>
 					</div>
 				</div>

@@ -9,3 +9,5 @@ const {store, actions } = useContext(Context)
 //     // 	contact={c} 
 //     // />
 // ))}
+
+/apis/fake/contact/{contact_id}

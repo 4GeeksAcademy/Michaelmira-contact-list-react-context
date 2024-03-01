@@ -12,11 +12,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then(resp=>resp.json())
 				.then(data=>setStore({contacts:data}))
 			},
-			editContact: () =>{
+			editContact: async(contact) =>{
 				let opt = {
 					method:"PUT",
 					headers: {"Content-type": "application/json"},
+					body: JSON.stringify(contact)
+
 				}
+				try{
+					let response = await fetch(process.env.BACKEND_URL+"/"+contact.id , opt)
+					if (!response.ok){
+						return false
+					}else{
+						getActions().getContacts()
+						return true
+					}
+				}catch(error) {console.log(error)}
 
 			},
 			addContact: async(contact)=>{

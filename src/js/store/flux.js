@@ -21,6 +21,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					headers: {"Content-type": "application/json"},
 					body: JSON.stringify(contact)
 				}
+				try{
+					let response = await fetch(process.env.BACKEND_URL, opt)
+					if (!response.ok){
+						return false
+					}else{
+						let newContacts = getStore().contacts.concat(contact)
+						setStore({contacts: newContacts})
+						return true
+					}
+				}
 			}
 		}
 		

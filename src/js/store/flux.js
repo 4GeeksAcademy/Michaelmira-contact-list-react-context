@@ -13,6 +13,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then(data=>setStore({contacts:data}))
 			},
 			editContact: () =>{
+				let opt = {
+					method:"PUT",
+					headers: {"Content-type": "application/json"},
+				}
 
 			},
 			addContact: async(contact)=>{
@@ -26,14 +30,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 					if (!response.ok){
 						return false
 					}else{
-						let newContacts = getStore().contacts.concat(contact)
-						setStore({contacts: newContacts})
+						// let newContacts = getStore().contacts.concat(contact)
+						// setStore({contacts: newContacts})
+						getActions().getContacts()
 						return true
 					}
 				}
 				catch(error){console.log(error)}
 			},
-			deleteContact:()=>{}
+			deleteContact:()=>{
+
+			}
 		}
 		
 	};

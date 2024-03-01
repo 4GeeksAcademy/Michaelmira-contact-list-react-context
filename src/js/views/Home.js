@@ -26,10 +26,10 @@ export const Home = () => {
 						aria-expanded="true">
 						<ul className="list-group pull-down" id="contact-list">
 							{store.contacts.map((c, i) => (
-								<div>{c?.full_name}</div>
-							  	// <ContactCard 
-								// 	contact={c} 
-								// />
+							  	<ContactCard 
+									key={i}
+									contact={c} 
+								/>
 							))}
 						</ul>
 					</div>

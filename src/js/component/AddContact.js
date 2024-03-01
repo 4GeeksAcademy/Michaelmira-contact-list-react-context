@@ -6,10 +6,11 @@ import { useParams, useNavigate } from "react-router-dom";
 
 export const AddContact = () => {
 	const [ contact, setContact ] = useState({
-		fullName: contact ? contact.fullName : "",
+		full_name: contact ? contact.full_name : "",
 		email: contact ? contact.email : "",
 		phone: contact ? contact.phone : "",
 		address: contact ? contact.address : "",
+		agenda_slug: "michaelmira"
 	});
 	const {store,actions}= useContext(Context)
 	let navigate = useNavigate()
@@ -18,7 +19,7 @@ export const AddContact = () => {
 
 	const onSave = async ()=>{
 		try{
-			let response = await actions.AddContact(contact)
+			let response = await actions.addContact(contact)
 			if (response==false){
 				alert("an error occured while adding contact")
 			}else{
@@ -32,18 +33,18 @@ export const AddContact = () => {
 		<div className="container">
 			<div>
 				<h1 className="text-center mt-5">Add a new contact</h1>
-				<form onSubmit={onSave()}>
+				<div>
 					<div className="form-group">
 						<label>Full Name</label>
 						<input
 							type="text"
 							className="form-control"
 							placeholder="Full Name"
-							value={contact.fullName}
+							value={contact.full_name}
 							onChange= {(e) =>
 								setContact({
 									...contact,
-									fullName: e.target.value
+									full_name: e.target.value
 								})
 							}
 						/>
@@ -94,13 +95,14 @@ export const AddContact = () => {
 						/>
 					</div>
 					<button
-						type="submit"
+						type="button"
+						onClick={() => {onSave()} }
 
 						 
 						className="btn btn-primary form-control">
 						save
 					</button>
-				</form>
+				</div>
 			</div>
 		</div>
 	);

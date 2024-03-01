@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			contacts [
+			contacts: [
 
 			]
 
@@ -12,7 +12,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then(resp=>resp.json())
 				.then(data=>setStore({contacts:data}))
 			},
-			editContact: () +>{
+			editContact: () =>{
 
 			},
 			addContact: async(contact)=>{

@@ -31,7 +31,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return true
 					}
 				}
-			}
+				catch(error){console.log(error)}
+			},
+			deleteContact:()=>{}
 		}
 		
 	};

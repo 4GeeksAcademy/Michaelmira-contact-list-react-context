@@ -27,12 +27,12 @@ export const AddContact = () => {
 		}catch(error){console.log(error)}
 		
 	}
-	
+
 	return (
 		<div className="container">
 			<div>
 				<h1 className="text-center mt-5">Add a new contact</h1>
-				<form>
+				<form onSubmit={onSave()}>
 					<div className="form-group">
 						<label>Full Name</label>
 						<input
@@ -94,11 +94,9 @@ export const AddContact = () => {
 						/>
 					</div>
 					<button
-						type="button"
-						onClick={() => {
-							console.log("contact before sending", contact );
-							props.onSave(contact) 
-						}} 
+						type="submit"
+
+						 
 						className="btn btn-primary form-control">
 						save
 					</button>

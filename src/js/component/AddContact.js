@@ -1,15 +1,33 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { Context } from "../store/appContext";
+import { useParams, useNavigate } from "react-router-dom";
 
-export const AddContact = (props) => {
+
+
+export const AddContact = () => {
 	const [ contact, setContact ] = useState({
-		fullName: props.contact ? props.contact.fullName : "",
-		email: props.contact ? props.contact.email : "",
-		phone: props.contact ? props.contact.phone : "",
-		address: props.contact ? props.contact.address : "",
+		fullName: contact ? contact.fullName : "",
+		email: contact ? contact.email : "",
+		phone: contact ? contact.phone : "",
+		address: contact ? contact.address : "",
 	});
+	const {store,actions}= useContext(Context)
+	let navigate = useNavigate()
+	
 
 
+	const onSave = async ()=>{
+		try{
+			let response = await actions.AddContact(contact)
+			if (response==false){
+				alert("an error occured while adding contact")
+			}else{
+				navigate("/")
+			}
+		}catch(error){console.log(error)}
+		
+	}
+	
 	return (
 		<div className="container">
 			<div>

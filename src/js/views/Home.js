@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
-import { useState } from "react";
+import React, { useState, useContext}  from "react";
+import { Context } from "../store/appContext";
 // import "../../styles/home.css";
 import { Link } from "react-router-dom";
-import { AddContact } from "../component/AddContact";
 import { ContactCard } from "../component/ContactCard";
 
 

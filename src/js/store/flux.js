@@ -12,6 +12,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then(resp=>resp.json())
 				.then(data=>setStore({contacts:data}))
 			},
+			editContact: () +>{
+
+			},
+			addContact: async(contact)=>{
+				let opt = {
+					method:"POST",
+					headers: {"Content-type": "application/json"},
+					body: JSON.stringify(contact)
+				}
+			}
 		}
 		
 	};

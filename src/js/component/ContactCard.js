@@ -1,10 +1,14 @@
 import React, { useState, useContext}  from "react";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
+
 
 
 
 
 export const ContactCard = ({contact}) => {
+
+	
 
 	const {store, actions } = useContext(Context)
 
@@ -20,15 +24,12 @@ export const ContactCard = ({contact}) => {
 				</div>
 				<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
 					<div className=" float-right">
-						<button
-							className="btn"
-							// onClick={() => props.onUpdate(props.contact)}
-							>
+						<Link className="btn btn-success" to={"/edit-contact/"+contact.id} >
 							<i className="fas fa-pencil-alt mr-3"></i>
-						</button>
+						</Link>
 						<button
 							className="btn"
-							// onClick={() => props.onDelete()}
+							onClick={() => actions.deleteContact(contact.id)}
 							>
 							<i className="fas fa-trash-alt"></i>
 						</button>

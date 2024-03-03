@@ -4,7 +4,8 @@ import { useParams, useNavigate } from "react-router-dom";
 
 
 
-export const AddContact = () => {
+export const EditContact = () => {
+    const params= useParams()
 	const [ contact, setContact ] = useState({
 		full_name: contact ? contact.full_name : "",
 		email: contact ? contact.email : "",
@@ -15,13 +16,18 @@ export const AddContact = () => {
 	const {store,actions}= useContext(Context)
 	let navigate = useNavigate()
 	
+    useEffect(() => {
+        setContact(store.contacts.find((item)=> item.id == params.theid ))
+    }, []);
+
+    
 
 
 	const onSave = async ()=>{
 		try{
-			let response = await actions.addContact(contact)
+			let response = await actions.editContact(contact)
 			if (response==false){
-				alert("an error occured while adding contact")
+				alert("an error occured while editing contact")
 			}else{
 				navigate("/")
 			}

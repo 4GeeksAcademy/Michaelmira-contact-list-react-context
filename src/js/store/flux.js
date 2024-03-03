@@ -49,9 +49,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				catch(error){console.log(error)}
 			},
-			deleteContact:()=>{
-
-			}
+			deleteContact: async(contactId)=>{
+				let opt = {
+					method:"PUT",
+					headers: {"Content-type" : "application/json"},
+					body: JSON.stringify({ id: contactId, deleted: true}),
+				};
+				try {
+					
+				}
+			},
 		}
 		
 	};

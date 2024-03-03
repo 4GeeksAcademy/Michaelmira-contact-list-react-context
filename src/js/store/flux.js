@@ -59,7 +59,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 					let response = await fetch(process.env.BACKEND_URL+"/"+contact.id , opt);
 					if(!response.ok) {
 						return false;
-					} else 
+					} else { 
+						const updatedContacts = getStore().contacts.filter(contact => contact.id !== contactId);
+						setStore({ contacts: updatedContacts });
+						
+						return true;
+					}
+				} catch (error) {
+					console.log(error);
 				}
 			},
 		}

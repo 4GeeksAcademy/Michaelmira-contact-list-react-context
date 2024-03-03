@@ -56,7 +56,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					body: JSON.stringify({ id: contactId, deleted: true}),
 				};
 				try {
-					
+					let response = await fetch(process.env.BACKEND_URL+"/"+contact.id , opt);
+					if(!response.ok) {
+						return false;
+					} else 
 				}
 			},
 		}

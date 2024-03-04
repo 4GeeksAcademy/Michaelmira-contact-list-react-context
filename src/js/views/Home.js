@@ -13,7 +13,7 @@ export const Home = () => {
 
 		<>
 			<div className="container-fluid min-vh-100 align-items-center bg-dark">
-				<div className="container bg-light ">
+				<div className="container min-vh-100 bg-light ">
 					<div>
 						<div className="d-flex justify-content-end my-3">
 

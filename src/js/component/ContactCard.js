@@ -23,22 +23,24 @@ export const ContactCard = ({contact}) => {
 					/>
 				</div>
 				<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
-					<div className=" float-right">
-						<Link className="btn btn-success" to={"/edit-contact/"+contact.id} >
-							<i className="fas fa-pencil-alt mr-3"></i>
-						</Link>
-						<button
-							className="btn"
-							onClick={() => actions.deleteContactFromApi(contact.id)}
-							>
-							<i className="fas fa-trash-alt"></i>
-						</button>
-					</div>
-					<label className="name lead">
+					<div className="d-flex justify-content-between" >
+						<label className="name lead">
 						
-    						<div>{contact.full_name}</div>
-						
-					</label>
+							<div>{contact.full_name}</div>
+					
+						</label>
+						<div>
+							<Link className="btn btn-success" to={"/edit-contact/"+contact.id} >
+								<i className="fas fa-pencil-alt mr-3"></i>
+							</Link>
+							<button
+								className="btn"
+								onClick={() => actions.deleteContactFromApi(contact.id)}
+								>
+								<i className="fas fa-trash-alt"></i>
+							</button>
+						</div>
+					</div>	
 					<br />
 					<i className="fas fa-map-marker-alt text-muted mr-3"></i>
 					<span className="text-muted">

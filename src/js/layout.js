@@ -7,8 +7,7 @@ import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
+
 import { AddContact } from "./component/AddContact";
 import { ContactCard } from "./component/ContactCard";
 import { EditContact } from "./component/EditContact";
@@ -23,17 +22,14 @@ const Layout = () => {
 		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home/>} />
 						<Route path="/contact-card" element={<ContactCard />} />
 						<Route path="/add-contact" element={<AddContact />} />
 						<Route path="/edit-contact/:theid" element={<EditContact />} />
 						<Route path="/single/:theid" element={<Single />} />
-						
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
-					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>

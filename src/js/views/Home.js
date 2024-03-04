@@ -12,29 +12,31 @@ export const Home = () => {
 	return (
 
 		<>
-			<div className="container">
-				<div>
-					<div className="text-right my-3">
+			<div className="container-flex bg-dark">
+				<div className="container bg-light ">
+					<div>
+						<div className="text-right my-3">
 
-					<Link className="btn btn-success" to="/add-contact" >
-						Please press this button to Add Contact
-					</Link>
-					</div>
-					<div
-						id="contacts"
-						className="panel-collapse collapse show"
-						aria-expanded="true">
-						<ul className="list-group pull-down" id="contact-list">
-							{store.contacts.map((c, i) => (
-							  	<ContactCard 
-									key={i}
-									contact={c} 
-								/>
-							))}
-						</ul>
+						<Link className="btn btn-success" to="/add-contact" >
+							Please press this button to Add Contact
+						</Link>
+						</div>
+						<div
+							id="contacts"
+							className="panel-collapse collapse show"
+							aria-expanded="true">
+							<ul className="list-group pull-down" id="contact-list">
+								{store.contacts.map((c, i) => (
+									<ContactCard 
+										key={i}
+										contact={c} 
+									/>
+								))}
+							</ul>
+						</div>
 					</div>
 				</div>
-			</div>
+				</div>
 		</>
 	);
 };

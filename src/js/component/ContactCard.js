@@ -17,7 +17,7 @@ export const ContactCard = ({contact}) => {
 			<div className="row w-100">
 				<div className="col-12 col-sm-6 col-md-3 px-0">
 					<img
-						src="https://picsum.photos/200/300"
+						src="https://picsum.photos/100/150"
 						alt="Mike Anamendolla"
 						className="rounded-circle mx-auto d-block img-fluid"
 					/>

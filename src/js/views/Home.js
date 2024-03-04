@@ -12,14 +12,14 @@ export const Home = () => {
 	return (
 
 		<>
-			<div className="container-flex bg-dark">
+			<div className="container-fluid min-vh-100 align-items-center bg-dark">
 				<div className="container bg-light ">
 					<div>
-						<div className="text-right my-3">
+						<div className="d-flex justify-content-end my-3">
 
-						<Link className="btn btn-success" to="/add-contact" >
-							Please press this button to Add Contact
-						</Link>
+							<Link className="btn btn-success" to="/add-contact" >
+								Add New Contact
+							</Link>
 						</div>
 						<div
 							id="contacts"

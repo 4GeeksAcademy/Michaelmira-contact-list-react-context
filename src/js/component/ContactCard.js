@@ -26,7 +26,7 @@ export const ContactCard = ({contact}) => {
 					<div className="d-flex justify-content-between" >
 						<label className="name lead">
 						
-							<div>{contact.full_name}</div>
+							<h3>{contact.full_name}</h3>
 					
 						</label>
 						<div>
@@ -43,14 +43,14 @@ export const ContactCard = ({contact}) => {
 					</div>	
 					<br />
 					<div className="d-flex flex-column align-items-start">
-						<div>
+						<div className="py-1" >
 							<i className="fas fa-map-marker-alt text-muted mr-3"></i>
 							<span className="text-muted">
 								{contact.address}
 							</span>
 						</div>
 						
-						<div>
+						<div className="py-1" >
 							<span
 								className="fa fa-phone fa-fw text-muted mr-3"
 								data-toggle="tooltip"
@@ -60,7 +60,7 @@ export const ContactCard = ({contact}) => {
 							</span>
 						</div>
 						
-						<div>
+						<div className="py-1" >
 							<span
 								className="fa fa-envelope fa-fw text-muted mr-3"
 								data-toggle="tooltip"

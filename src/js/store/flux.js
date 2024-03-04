@@ -37,7 +37,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					body: JSON.stringify(contact)
 				}
 				try{
-					let response = await fetch(process.env.BACKEND_URL, opt)
+					let response = await fetch(process.env.BACKEND_URL+"/"+contact.id , opt)
 					if (!response.ok){
 						return false
 					}else{
@@ -49,26 +49,40 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				catch(error){console.log(error)}
 			},
-			deleteContact: async(contactId)=>{
-				let opt = {
-					method:"PUT",
-					headers: {"Content-type" : "application/json"},
-					body: JSON.stringify({ id: contactId, deleted: true}),
-				};
+			deleteContactFromApi: async (contactId) => {
 				try {
-					let response = await fetch(process.env.BACKEND_URL+"/"+contact.id , opt);
-					if(!response.ok) {
+					const apiUrl = process.env.BACKEND_URL + "/" + contactId;
+			
+					// Fetch the current contacts
+					const currentContacts = getStore().contacts;
+			
+					// Filter out the contact to be deleted
+					const updatedContacts = currentContacts.filter(contact => contact.id !== contactId);
+			
+					// Make a PUT request to update the contacts on the backend
+					let response = await fetch(apiUrl, {
+						method: "PUT",
+						headers: {
+							"Content-type": "application/json"
+						},
+						body: JSON.stringify(updatedContacts)
+					});
+			
+					if (!response.ok) {
+						console.error("Error updating contacts on API:", response.statusText);
 						return false;
-					} else { 
-						const updatedContacts = getStore().contacts.filter(contact => contact.id !== contactId);
-						setStore({ contacts: updatedContacts });
-						
-						return true;
 					}
+			
+					// Update the local state with the filtered contacts
+					setStore({ contacts: updatedContacts });
+			
+					return true;
 				} catch (error) {
-					console.log(error);
+					console.error("Error deleting contact:", error.message);
+					return false;
 				}
 			},
+			
 		}
 		
 	};

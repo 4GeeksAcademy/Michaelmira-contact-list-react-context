@@ -29,7 +29,7 @@ export const ContactCard = ({contact}) => {
 						</Link>
 						<button
 							className="btn"
-							onClick={() => actions.deleteContact(contact.id)}
+							onClick={() => actions.deleteContactFromApi(contact.id)}
 							>
 							<i className="fas fa-trash-alt"></i>
 						</button>

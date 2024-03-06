@@ -1,13 +1,4 @@
-// import { Context } from "../store/appContext";
-
-const {store, actions } = useContext(Context)
-
-
-// {store.contacts.map((c, i) => (
-//     <div>{c?.full_name}</div>
-//       // <ContactCard 
-//     // 	contact={c} 
-//     // />
-// ))}
-
-/apis/fake/contact/{contact_id}
+{/* <div className="container-fluid min-vh-100 align-items-center bg-dark py-5 ">
+				<div id="DivOne" className="container d-flex flex-column bg-light my-5 pb-5 px-5  ">
+					<div>
+						<div className="d-flex justify-content-end my-3"> */}

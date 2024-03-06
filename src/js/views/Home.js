@@ -13,13 +13,13 @@ export const Home = () => {
 	return (
 
 		<>
-			<div className="container-fluid min-vh-100 align-items-center bg-dark">
-				<div className="container min-vh-100 bg-light ">
+			<div className="container-fluid min-vh-100 align-items-center bg-dark py-5 ">
+				<div id="DivOne" className="container d-flex flex-column bg-light my-5 pb-5 px-5  ">
 					<div>
 						<div className="d-flex justify-content-end my-3">
 						<FetchAll />
 
-							<Link className="btn btn-success" to="/add-contact" >
+							<Link className="btn btn-success mt-2 " to="/add-contact" >
 								Add New Contact
 							</Link>
 						</div>
@@ -38,7 +38,7 @@ export const Home = () => {
 						</div>
 					</div>
 				</div>
-				</div>
+			</div>
 		</>
 	);
 };

@@ -36,9 +36,9 @@ export const EditContact = () => {
 	}
 
 	return (
-		<div className="container">
-			<div>
-				<h1 className="text-center mt-5">Add a new contact</h1>
+		<div className="container-fluid min-vh-100 align-items-center bg-dark py-5 ">
+			<div className="container d-flex flex-column bg-light my-5 pb-5 px-5  ">
+				<h1 className="text-center mt-5">Edit Contact</h1>
 				<div>
 					<div className="form-group">
 						<label>Full Name</label>

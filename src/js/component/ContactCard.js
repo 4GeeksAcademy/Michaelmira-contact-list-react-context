@@ -1,7 +1,7 @@
 import React, { useState, useContext}  from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-
+import { DeleteConfirmation } from "./DeleteConfirmation";
 
 
 
@@ -41,6 +41,8 @@ export const ContactCard = ({contact}) => {
 							>
 								<i className="fas fa-trash-alt"></i>
 							</button>
+
+							<DeleteConfirmation contact ={contact} actions={actions}/>
 						</div>
 					</div>	
 					<br />

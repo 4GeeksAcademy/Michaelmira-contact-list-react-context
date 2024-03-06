@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 // import "../../styles/home.css";
 import { Link } from "react-router-dom";
 import { ContactCard } from "../component/ContactCard";
+import FetchAll from "../component/FetchAll";
 
 
 export const Home = () => {
@@ -16,6 +17,7 @@ export const Home = () => {
 				<div className="container min-vh-100 bg-light ">
 					<div>
 						<div className="d-flex justify-content-end my-3">
+						<FetchAll />
 
 							<Link className="btn btn-success" to="/add-contact" >
 								Add New Contact

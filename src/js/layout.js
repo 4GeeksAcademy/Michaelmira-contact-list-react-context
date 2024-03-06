@@ -7,7 +7,6 @@ import injectContext from "./store/appContext";
 
 
 import { AddContact } from "./component/AddContact";
-import { ContactCard } from "./component/ContactCard";
 import { EditContact } from "./component/EditContact";
 
 //create your first component
@@ -22,7 +21,6 @@ const Layout = () => {
 				<ScrollToTop>
 					<Routes>
 						<Route path="/" element={<Home/>} />
-						<Route path="/contact-card" element={<ContactCard />} />
 						<Route path="/add-contact" element={<AddContact />} />
 						<Route path="/edit-contact/:theid" element={<EditContact />} />
 						<Route path="*" element={<h1>Not found!</h1>} />

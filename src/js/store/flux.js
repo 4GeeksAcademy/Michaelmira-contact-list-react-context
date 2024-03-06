@@ -49,6 +49,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				catch(error){console.log(error)}
 			},
+			deleteContact: async (contactId) => {
+				let opt = {
+					method: "DELETE",
+					headers: {"Content-type": "application/json" },
+				};
+
+			}
 		}
 		
 	};

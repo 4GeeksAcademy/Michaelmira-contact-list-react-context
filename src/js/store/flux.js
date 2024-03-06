@@ -58,12 +58,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					let response = await fetch(process.env.BACKEND_URL + "/" + contactId, opt);
 					if(response.status == 201) {
 				getActions().getContacts()
-						return true;
+							return true;
+						} else {
+						return false;
 					}
+				} catch (error) {
+					console.log(error);
+					return false;
 				}
-
-			}
-		}
+			},
+		},
 		
 	};
 };

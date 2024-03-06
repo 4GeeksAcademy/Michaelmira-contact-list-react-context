@@ -34,9 +34,11 @@ export const ContactCard = ({contact}) => {
 								<i className="fas fa-pencil-alt mr-3"></i>
 							</Link>
 							<button
-								className="btn"
-								onClick={() => actions.deleteContactFromApi(contact.id)}
-								>
+								type="button"
+								class="btn "
+								data-bs-toggle="modal"
+								data-bs-target={"#deleteModal"+contact.id}
+							>
 								<i className="fas fa-trash-alt"></i>
 							</button>
 						</div>

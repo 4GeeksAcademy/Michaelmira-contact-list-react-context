@@ -54,6 +54,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 					method: "DELETE",
 					headers: {"Content-type": "application/json" },
 				};
+				try {
+					let response = await fetch(process.env.BACKEND_URL + "/" + contactId, opt);
+					if(response.status == 201) {
+				getActions().getContacts()
+						return true;
+					}
+				}
 
 			}
 		}

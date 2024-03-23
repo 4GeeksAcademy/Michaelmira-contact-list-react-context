@@ -35,7 +35,7 @@ export const ContactCard = ({contact}) => {
 							</Link>
 							<button
 								type="button"
-								class="btn "
+								className="btn "
 								data-bs-toggle="modal"
 								data-bs-target={"#deleteModal"+contact.id}
 							>

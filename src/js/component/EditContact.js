@@ -2,8 +2,6 @@ import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useParams, useNavigate } from "react-router-dom";
 
-
-
 export const EditContact = () => {
     const params= useParams()
 	const [ contact, setContact ] = useState({
@@ -20,9 +18,6 @@ export const EditContact = () => {
         setContact(store.contacts.find((item)=> item.id == params.theid ))
     }, []);
 
-    
-
-
 	const onSave = async ()=>{
 		try{
 			let response = await actions.editContact(contact)
@@ -32,7 +27,6 @@ export const EditContact = () => {
 				navigate("/")
 			}
 		}catch(error){console.log(error)}
-		
 	}
 
 	return (
@@ -103,8 +97,6 @@ export const EditContact = () => {
 					<button
 						type="button"
 						onClick={() => {onSave()} }
-
-						 
 						className="btn btn-primary form-control">
 						save
 					</button>

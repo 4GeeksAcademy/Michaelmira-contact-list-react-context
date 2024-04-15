@@ -99,7 +99,7 @@ export const AddContact = () => {
 						onClick={() => {onSave()} }
 
 						 
-						className="btn btn-primary form-control">
+						className="btn pt-1 mt-4 btn-primary form-control">
 						save
 					</button>
 				</div>

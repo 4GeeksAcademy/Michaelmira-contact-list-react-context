@@ -13,15 +13,17 @@
 ```
 $ npm install
 ```
-2. Create a .env file:
+2. Create a .env file: BACKEND_URL=https://playground.4geeks.com/contact
 ```
-$ cp .env.example .env
+$ cp .env.example .env BACKEND_URL=https://playground.4geeks.com/contact
 ```
 3. Start coding! and the webpack dev server with live reload, for windows, mac, linux or Gitpod:
 
 ```bash
-$ npm run start
+$ npm run start BACKEND_URL=https://playground.4geeks.com/contact
 ```
+
+Dont forget to do BACKEND_URL=https://playground.4geeks.com/contact
 
 ### Styles
 You can update the `styles/index.css` or create new `.css` files inside `styles/` and import them into your current scss or js files depending on your needs.

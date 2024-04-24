@@ -26,7 +26,7 @@ export const ContactCard = ({contact}) => {
 					<div className="d-flex justify-content-between" >
 						<label className="name lead">
 						
-							<h3>{contact.full_name}</h3>
+							<h3>{contact.name}</h3>
 					
 						</label>
 						<div>

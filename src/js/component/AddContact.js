@@ -6,11 +6,11 @@ import { useParams, useNavigate } from "react-router-dom";
 
 export const AddContact = () => {
 	const [ contact, setContact ] = useState({
-		full_name: contact ? contact.full_name : "",
+		name: contact ? contact.name : "",
 		email: contact ? contact.email : "",
 		phone: contact ? contact.phone : "",
-		address: contact ? contact.address : "",
-		agenda_slug: "michaelmira"
+		address: contact ? contact.address : ""
+		
 	});
 	const {store,actions}= useContext(Context)
 	let navigate = useNavigate()
@@ -40,11 +40,11 @@ export const AddContact = () => {
 							type="text"
 							className="form-control"
 							placeholder="Full Name"
-							value={contact.full_name}
+							value={contact.name}
 							onChange= {(e) =>
 								setContact({
 									...contact,
-									full_name: e.target.value
+									name: e.target.value
 								})
 							}
 						/>

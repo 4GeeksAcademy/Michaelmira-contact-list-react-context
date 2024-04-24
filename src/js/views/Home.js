@@ -27,7 +27,7 @@ export const Home = () => {
 							className="panel-collapse collapse show"
 							aria-expanded="true">
 							<ul className="list-group pull-down" id="contact-list">
-								{store.contacts.map((c, i) => (
+								{store.contacts && store.contacts.map((c, i) => (
 									<ContactCard 
 										key={i}
 										contact={c} 

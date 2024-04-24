@@ -8,9 +8,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			getContacts:()=>{
-				fetch(process.env.BACKEND_URL+"/agenda/michaelmira")
+				fetch(process.env.BACKEND_URL + "/agendas/michaelmira/contacts")
 				.then(resp=>resp.json())
-				.then(data=>setStore({contacts:data}))
+				.then(data=>setStore({contacts:data.contacts}))
 			},
 			editContact: async(contact) =>{
 				let opt = {
@@ -20,7 +20,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				}
 				try{
-					let response = await fetch(process.env.BACKEND_URL+"/"+contact.id , opt)
+					let response = await fetch(process.env.BACKEND_URL+"/agendas/michaelmira/contacts/"+contact.id , opt)
 					if (!response.ok){
 						return false
 					}else{
@@ -37,7 +37,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					body: JSON.stringify(contact)
 				}
 				try{
-					let response = await fetch(process.env.BACKEND_URL, opt)
+					let response = await fetch(process.env.BACKEND_URL + "/agendas/michaelmira/contacts", opt)
 					if (!response.ok){
 						return false
 					}else{
@@ -55,8 +55,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					headers: {"Content-type": "application/json" },
 				};
 				try {
-					let response = await fetch(process.env.BACKEND_URL + "/" + contactId, opt);
-					if(response.status == 201) {
+					let response = await fetch(process.env.BACKEND_URL + "/agendas/michaelmira/contacts/" + contactId, opt);
+					if(response.ok) {
 				getActions().getContacts()
 							return true;
 						} else {

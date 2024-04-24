@@ -5,7 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 export const EditContact = () => {
     const params= useParams()
 	const [ contact, setContact ] = useState({
-		full_name: contact ? contact.full_name : "",
+		name: contact ? contact.name : "",
 		email: contact ? contact.email : "",
 		phone: contact ? contact.phone : "",
 		address: contact ? contact.address : "",
@@ -40,11 +40,11 @@ export const EditContact = () => {
 							type="text"
 							className="form-control"
 							placeholder="Full Name"
-							value={contact.full_name}
+							value={contact.name}
 							onChange= {(e) =>
 								setContact({
 									...contact,
-									full_name: e.target.value
+									name: e.target.value
 								})
 							}
 						/>
